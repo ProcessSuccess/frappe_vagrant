@@ -1,4 +1,5 @@
 echo "Turn on some Death Metal and go make a pot of coffee!"
+
 . /home/vagrant/vagrant_setup_info.sh
 
 apt-get update
@@ -25,7 +26,7 @@ git config --global credential.helper cache
 printf '$GIT_USER_NAME\n$GIT_PASS' | bench get-app https://github.com/process_success/Process-Success-Application.git
 
 ln -s /home/vagrant/frappe-bench/apps/process_success/process_success/public /home/vagrant/frappe-bench/sites/assets/process_success
-printf '$MARIA_DB_PASS\n$WEB_ADMIN_PASS' | bench new-site crv.develop
+printf '$MARIA_DB_PASS\n$WEB_ADMIN_PASS\n$WEB_ADMIN_PASS' | bench new-site crv.develop
 bench --site crv.develop install-app process_success
 
 #ln -s /home/frappe/frappe-bench/apps/process_success/process_success/public /home/frappe/frappe-bench/sites/assets/process_success

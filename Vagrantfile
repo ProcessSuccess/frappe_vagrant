@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8000, host: 8080
   config.vm.network "forwarded_port", guest: 3000, host: 3000
   #config.vm.boot_timeout = 900
-  config.vm.synced_folder "Frappe", "/home/vagrant"
+  config.vm.synced_folder "", "/home/vagrant"
 
   config.vm.provider "virtualbox" do |vb|
     #vb.customize ["modifyvm", :id, "--cableconnected1", "on"]
