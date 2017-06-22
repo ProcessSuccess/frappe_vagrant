@@ -1,5 +1,5 @@
 echo "Turn on some Death Metal and go make a pot of coffee!"
-
+start=`date +%s`
 . /home/vagrant/vagrant_setup_info.sh
 
 apt-get update
@@ -40,6 +40,8 @@ printf $MARIA_DB_PASS"\n"$WEB_ADMIN_PASS"\n"$WEB_ADMIN_PASS | bench new-site crv
 bench --site crv.develop install-app process_success
 bench use crv.develop
 bench migrate
+end=`date +%s`
+runtime=$((end-start))
 
 #cd /home/vagrant/frappe-bench/apps/process_success
 #sudo npm install --global gulp-cli
@@ -47,6 +49,7 @@ bench migrate
 
 echo "--------------------------------------"
 echo "         INSTALATION COMPLETE "
+echo "       Instalation Took : $runtime "
 echo "--------------------------------------"
 echo "-----------------------"
 echo "- Start Up the Server -"
