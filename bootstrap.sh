@@ -25,7 +25,23 @@ echo "--------------------------------------"
 git config --global credential.helper cache
 bench get-app https://$GIT_USER_NAME:$GIT_PASS@github.com/process-success/Process-Success-Application.git
 ln -s /home/vagrant/frappe-bench/apps/process_success/process_success/public /home/vagrant/frappe-bench/sites/assets/process_success
-printf '$MARIA_DB_PASS\n$WEB_ADMIN_PASS\n$WEB_ADMIN_PASS' | bench new-site crv.develop
-bench --site crv.develop install-app process_success
+
+cd /home/vagrant/frappe-bench/apps/process_success
+sudo npm install --global gulp-cli
+npm install
+
+echo "--------------------------------------"
+echo "         INSTALATION COMPLETE "
+echo "--------------------------------------"
+echo "Run The Following Comands"
+echo " "
+echo "$  vagrant ssh"
+echo "Enter Password: vagrant"
+echo "                             "
+echo "$  cd /home/vagrant/frappe-bench"
+echo "$  bench new-site crv.develop"
+echo "$  bench --site crv.develop install-app process_success"
+echo "$  bench use crv.develop"
+echo "$  bench start"
 
 #ln -s /home/frappe/frappe-bench/apps/process_success/process_success/public /home/frappe/frappe-bench/sites/assets/process_success
