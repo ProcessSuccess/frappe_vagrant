@@ -20,6 +20,7 @@ vagrant ssh
 cd /home/vagrant/frappe-bench
 bench start
 ```
+To view site go to 127.0.0.1:8080
 
 To run gulp open a new terminal window:
 
