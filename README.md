@@ -18,11 +18,9 @@ ssh password is vagrant
 ```
 vagrant ssh
 cd /home/vagrant/frappe-bench
-bench new-site crv.develop
-bench --site crv.develop install-app process_success
-bench use crv.develop
 bench start
 ```
+To view site go to 127.0.0.1:8080
 
 To run gulp open a new terminal window:
 
