@@ -3,7 +3,7 @@ start=`date +%s`
 . /home/vagrant/vagrant_setup_info.sh
 
 apt-get update
-cd /vagrant/frappe-bench
+cd /home/vagrant/frappe-bench
 sudo apt install python2.7
 wget https://raw.githubusercontent.com/frappe/bench/master/playbooks/install.py
 printf $MARIA_DB_PASS"\n"$MARIA_DB_PASS"\n"$ADMIN_PASS"\n"$ADMIN_PASS"\n" | python install.py --develop --user vagrant
@@ -40,12 +40,14 @@ printf $MARIA_DB_PASS"\n"$WEB_ADMIN_PASS"\n"$WEB_ADMIN_PASS | bench new-site crv
 bench --site crv.develop install-app process_success
 bench use crv.develop
 bench migrate
+cp /home/vagrant/frappe-bench/apps/process_success/socketio.js /home/vagrant/frappe-bench/apps/frappe/socketio.js
 end=`date +%s`
 runtime=$((end-start))
 
-#cd /home/vagrant/frappe-bench/apps/process_success
-#sudo npm install --global gulp-cli
-#npm install
+cd /home/vagrant/frappe-bench/apps/process_success
+sudo npm install --global gulp-cli
+sudo npm install --global browserify
+npm install
 
 echo "--------------------------------------"
 echo "         INSTALATION COMPLETE "
@@ -65,8 +67,8 @@ echo "---------------- "
 echo "Open a new terminal "
 echo "$  vagrant ssh"
 echo "Enter Password: vagrant"
-echo "$  sudo npm install --global gulp-cli"
-echo "$  npm install"
+# echo "$  sudo npm install --global gulp-cli"
+# echo "$  npm install"
 echo "$  gulp"
 
 
