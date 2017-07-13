@@ -27,6 +27,7 @@ To run gulp open a new terminal window:
 ```
 vagrant ssh
 cd /home/vagrant/frappe-bench/apps/process_success
+npm install --global gulp-cli
 gulp
 
 ```
