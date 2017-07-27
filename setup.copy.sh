@@ -1,13 +1,13 @@
 # SQL password
-MARIA_DB_PASS="getin123"
+MARIA_DB_PASS=""
 
 # Not sure what this is for
 # required and piped into the python install script 
-ADMIN_PASS="getin123"
+ADMIN_PASS=""
 
 # password for the site once live
 # username : Administrator
-WEB_ADMIN_PASS="getin123"
+WEB_ADMIN_PASS=""
 
 # Git Login Info
 # not an email address

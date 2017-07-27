@@ -1,6 +1,6 @@
 echo "Turn on some Death Metal and go make a pot of coffee!"
 start=`date +%s`
-. /home/vagrant/vagrant_setup_info.sh
+. /home/vagrant/setup.sh
 
 apt-get update
 cd /home/vagrant/frappe-bench
