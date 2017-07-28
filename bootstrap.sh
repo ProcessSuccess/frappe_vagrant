@@ -18,7 +18,7 @@ sudo apt install python2.7
 wget https://raw.githubusercontent.com/frappe/bench/master/playbooks/install.py
 
 echo "--------------------------------------"
-echo " USE INSTALL SCRIPT                   "
+echo "         USE INSTALL SCRIPT            "
 echo "--------------------------------------"
 printf $MARIA_DB_PASS"\n"$MARIA_DB_PASS"\n"$ADMIN_PASS"\n"$ADMIN_PASS"\n" | python install.py --develop --user vagrant
 cd $HOME_DIR/frappe-bench
@@ -70,9 +70,10 @@ end=`date +%s`
 runtime=$((end-start))
 
 cd $HOME_DIR/frappe-bench/apps/process_success
-sudo npm install --global gulp-cli
-sudo npm install --global browserify
-npm install
+# sudo npm install --global gulp-cli
+# sudo npm install --global gulp
+# sudo npm install --global browserify
+# npm install
 
 echo "--------------------------------------"
 echo "         INSTALATION COMPLETE "
@@ -92,7 +93,8 @@ echo "---------------- "
 echo "Open a new terminal "
 echo "$  vagrant ssh"
 echo "Enter Password: vagrant"
-# echo "$  sudo npm install --global gulp-cli"
+echo "$  sudo npm install --global gulp-cli"
+echo "$  sudo npm install --global gulp"
 # echo "$  npm install"
 echo "$  gulp"
 

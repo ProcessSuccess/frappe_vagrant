@@ -12,7 +12,10 @@ WEB_ADMIN_PASS=""
 # Git Login Info
 # not an email address
 # !! be carefull not to check this in with info !!
+
+## NOT EMAIL ADDRESS ##
 GIT_USER_NAME=""
+
 GIT_PASS=""
 GIT_EMAIL=""
 GIT_FULL_NAME=""
